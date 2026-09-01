@@ -3,7 +3,7 @@ const app = express();
 
 // Importar rutas de los 3 módulos
 const productRoutes = require('./routes/product.routes');
-const userRoutes = require('./routes/user.routes');
+const userRoutes = require('./routes/userRoutes');
 const clientRoutes = require('./routes/client.routes');
 
 app.use(express.json());
