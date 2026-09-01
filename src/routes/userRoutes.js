@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const userController = require('../controllers/userController');
 
-// Vista del Login
-router.get('/login', (req, res) => {
-  res.render('login', { titulo: 'Iniciar Sesión' });
-});
+// Rutas GET (Para mostrar las vistas)
+router.get('/login', userController.mostrarLogin);
+router.get('/registro', userController.mostrarRegistro);
 
-// Vista de Registro
-router.get('/registro', (req, res) => {
-  res.render('registro', { titulo: 'Registro de Usuario' });
-});
+// Rutas POST (Para procesar los datos enviados por los formularios)
+router.post('/login', userController.loginUsuario);
+router.post('/registro', userController.registrarUsuario);
 
 module.exports = router;
